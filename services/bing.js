@@ -1,9 +1,10 @@
 'use strict';
 const axios = require('axios');
+require('dotenv').config();
 
 class BingSearch {
   constructor() {
-    this.subscriptionKey = 'e266cf26d60a4d4dabedc65f1b36eada';
+    this.subscriptionKey = process.env.BING_KEY;
     this.host = 'api.bing.microsoft.com';
     this.header = {
       'Ocp-Apim-Subscription-Key': this.subscriptionKey,
@@ -32,16 +33,12 @@ class BingSearch {
 
       const emoji = {
         link: '🔗',
-        // Add more emoji mappings as needed
       };
-      
-      // Now you can use emoji.link in your code
+
       const message = formattedData.map(entry => `
 ${entry.datePublished}
 <a href="${entry.url}">Read more..</a>
 `);
-
-
       return message;
 
     } catch (error) {

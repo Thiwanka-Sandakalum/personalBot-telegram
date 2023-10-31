@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const apiKey = process.env.OPEN_WEATHER_API_KEY || 'e98e4c97b896dfeda612ca8c873734f9';
+const apiKey = process.env.OPEN_WEATHER_API_KEY;
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 async function getWeather(latitude = 6.827028, longitude = 79.918472) {

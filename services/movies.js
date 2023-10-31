@@ -1,4 +1,6 @@
 const axios = require('axios');
+require('dotenv').config()
+
 
 class Movies {
     constructor() {
@@ -6,7 +8,7 @@ class Movies {
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMDczNjQ4MzRiNDZjY2ZiYTI4YmMwYzU0ZjI3MzEwMSIsInN1YiI6IjY1M2Y4MDQxNTkwN2RlMDEzOGUyYjU3YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LXtOwB5IORNxUvqQBvKHvRH7g9R5khkAA6WLLXl0POY'
+                Authorization: `Bearer ${process.env.MOVIES_API_KEY}`
             },
             params: {
                 'language': 'en-US'
